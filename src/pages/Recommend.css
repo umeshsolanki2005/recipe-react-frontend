@@ -1,0 +1,144 @@
+/* src/pages/Recommend.css */
+
+.recommend-page {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #fff3e6, #ffe0b3);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e65100;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px #ffcba4;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-box {
+  width: 60%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  resize: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.input-box:focus {
+  outline: none;
+  transform: scale(1.02);
+  border-color: #ff914d;
+  background-color: #fff8f4;
+}
+
+.submit-btn {
+  margin-top: 1.2rem;
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  background: linear-gradient(to right, #ff7043, #ff5722);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(255, 87, 34, 0.35);
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #ff5722, #e64a19);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.5);
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 1.2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: popUp 0.8s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin: 0.5rem 0 0.3rem;
+  color: #d84315;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .input-box {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .submit-btn {
+    width: 80%;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+
+  

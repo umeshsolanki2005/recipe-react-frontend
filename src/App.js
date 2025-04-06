@@ -1,39 +1,19 @@
-// react-frontend/src/App.js
-
-import React, { useState } from 'react';
-import axios from 'axios';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Recommend from './pages/Recommend';
 
 function App() {
-  const [ingredients, setIngredients] = useState('');
-  const [results, setResults] = useState([]);
-
-  const handleSubmit = async () => {
-    try {
-      const res = await axios.post('https://recipe-flask-api.onrender.com/recommend', {
-        ingredients,
-      });
-      setResults(res.data);
-    } catch (err) {
-      alert('Failed to get recipes');
-    }
-  };
-
   return (
-    <div className="App">
-      <h1>🍳 Recipe Recommender</h1>
-      <textarea value={ingredients} onChange={(e) => setIngredients(e.target.value)} rows={4} />
-      <br />
-      <button onClick={handleSubmit}>Recommend</button>
-      <div className="results">
-        {results.map((r, idx) => (
-          <div key={idx} className="card">
-            <strong>ID:</strong> {r.id}
-            <p>{r.joined_ingredients}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recommend" element={<Recommend />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
