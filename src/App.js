@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/recommend', {
+      const res = await axios.post('https://recipe-flask-api.onrender.com/recommend', {
         ingredients,
       });
       setResults(res.data);
