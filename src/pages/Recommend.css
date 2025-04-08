@@ -93,11 +93,11 @@
 
 .recipe-img {
   width: 100%;
-  border-radius: 14px;
-  margin-bottom: 0.8rem;
+  height: 200px;
   object-fit: cover;
-  height: 180px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid red; /* Debugging border */
+  background-color: lightgray; /* Debugging background */
+  display: block;
 }
 
 .card h3 {
@@ -139,6 +139,3 @@
     width: 90%;
   }
 }
-
-
-  

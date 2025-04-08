@@ -1,6 +1,9 @@
+// react-frontend/src/pages/Recommend.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Recommend.css';
+
 
 function Recommend() {
   const [ingredients, setIngredients] = useState('');
@@ -11,20 +14,15 @@ function Recommend() {
       const res = await axios.post('https://recipe-flask-api.onrender.com/recommend', {
         ingredients,
       });
-
-      // Update with image URLs (assuming images are hosted in GitHub or S3)
-      const updatedResults = res.data.map((r, idx) => ({
-        ...r,
-        image: r.image_url || `https://source.unsplash.com/400x300/?food,recipe&sig=${idx}`,
-      }));
-
-      setResults(updatedResults);
+  
+      console.log('Backend response:', res.data); // Add this line
+      setResults(res.data);
     } catch (err) {
       console.error(err);
       alert('Failed to get recipes');
     }
   };
-
+  
   return (
     <div className="recommend-page">
       <h1 className="title">🍽️ Smart Recipe Recommender</h1>
@@ -48,16 +46,17 @@ function Recommend() {
         {results.map((r, idx) => (
           <div key={idx} className="card">
             <img
-              src={r.image}
-              alt={r.Title || 'Recipe'}
+              src={r.image_url+'.jpg'}
+              alt={r.title || 'Recipe'}
               className="recipe-img"
             />
-            <h3>{r.Title || `Recipe #${idx + 1}`}</h3>
-            <p><strong>Ingredients:</strong> {r.Cleaned_Ingredients?.slice(0, 120)}...</p>
+            <h3>{r.title || `Recipe #${idx + 1}`}</h3>
+            <p><strong>Ingredients:</strong> {r.joined_ingredients?.slice(0, 120)}...</p>
             <details>
               <summary>View Full Recipe</summary>
-              <p><strong>Full Ingredients:</strong> {r.Ingredients}</p>
-              <p><strong>Instructions:</strong> {r.Instructions}</p>
+              <p><strong>Full Ingredients:</strong> {r.joined_ingredients}</p>
+              <p><strong>Instructions:</strong> {r.instructions}</p>
+
             </details>
           </div>
         ))}
