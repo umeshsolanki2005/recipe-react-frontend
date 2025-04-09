@@ -121,14 +121,28 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
   .input-box {
-    width: 90%;
+    width: 75%;
   }
 
+  .submit-btn {
+    width: auto;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .title {
     font-size: 2.3rem;
+  }
+
+  .input-box {
+    width: 90%;
   }
 
   .submit-btn {
@@ -137,5 +151,25 @@
 
   .card {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .card {
+    width: 95%;
   }
 }

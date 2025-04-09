@@ -1,93 +1,113 @@
 /* src/pages/Home.css */
 
 .home {
-    text-align: center;
-    padding: 2rem;
-    backdrop-filter: brightness(0.85);
-    animation: fadeIn 1.5s ease-in;
-    backdrop-filter: blur(3px);
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: brightness(0.85) blur(3px);
+  animation: fadeIn 1.5s ease-in;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+  animation: slideDown 1.2s ease-out;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: popUp 1.8s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pop-up animation */
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.home button:hover {
+  background-color: #ff7538;
+  transform: scale(1.08);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
   .home h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-    margin-bottom: 2rem;
-    animation: slideDown 1.2s ease-out;
+    font-size: 2.5rem;
   }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+
   .home button {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    background-color: #ff914d;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: popUp 1.8s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
   }
-  
-  @keyframes popUp {
-    from {
-      opacity: 0;
-      transform: scale(0.85);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 1.5rem;
   }
-  
-  .home button:hover {
-    background-color: #ff7538;
-    transform: scale(1.08);
+
+  .home h1 {
+    font-size: 2.2rem;
   }
-  
-  /* Responsive Styles */
-  @media screen and (max-width: 768px) {
-    .home h1 {
-      font-size: 2.2rem;
-    }
-  
-    .home button {
-      font-size: 1rem;
-      padding: 0.8rem 2rem;
-    }
+
+  .home button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
   }
-  
-  @media screen and (max-width: 480px) {
-    .home h1 {
-      font-size: 1.8rem;
-    }
-  
-    .home button {
-      font-size: 0.95rem;
-      padding: 0.7rem 1.6rem;
-    }
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    padding: 1rem;
   }
-  
+
+  .home h1 {
+    font-size: 1.8rem;
+  }
+
+  .home button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.6rem;
+  }
+}
