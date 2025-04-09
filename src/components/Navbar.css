@@ -1,5 +1,4 @@
 /* src/components/Navbar.css */
-
 .navbar {
   background-color: #333;
   color: white;
@@ -16,10 +15,10 @@
   font-weight: bold;
 }
 
-/* Default desktop nav links */
 .navbar .nav-links {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* Link styles */
@@ -50,8 +49,8 @@
 
   .navbar a {
     margin: 8px 0;
-    width: 100%;
-    padding: 8px 0;
-    border-top: 1px solid #444;
   }
 }
+
+
+  
