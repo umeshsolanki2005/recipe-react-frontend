@@ -46,7 +46,7 @@ function Recommend() {
         {results.map((r, idx) => (
           <div key={idx} className="card">
             <img
-              src={r.image_url+'.jpg'}
+              src={r.image_url}
               alt={r.title || 'Recipe'}
               className="recipe-img"
             />
